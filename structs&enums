@@ -1,0 +1,46 @@
+#include <iostream>
+
+
+using namespace std;
+
+enum enGender {male, female};
+enum enNationality {jordanian, foriegn };
+
+struct stAddress {
+    string StreetName;
+    string BuildingNum;
+    string ZipCode;
+};
+struct stContactInfo {
+    string Email;
+    string Phone;
+    stAddress Address;
+};
+
+struct stPerson {
+    string FirstName;
+    string FinalName;
+    stContactInfo ContactInfo;
+    enGender Gender;
+    enNationality Nationality;
+};
+
+
+int main() {
+    stPerson person;
+    person.FirstName = "saif";
+    person.FinalName = "aldeen";
+    person.ContactInfo.Email = "saifps2006@gmail.com";
+    person.ContactInfo.Phone = "0790158089";
+    person.ContactInfo.Address.BuildingNum = "37";
+    person.ContactInfo.Address.StreetName = "shari al anees";
+    person.ContactInfo.Address.ZipCode = "818";
+    person.Gender = male;
+    person.Nationality = jordanian;
+
+    stPerson arr[] = { person };
+    cout << arr[0].FirstName;
+
+   
+    return 0;
+}
