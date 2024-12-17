@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+
+
+struct stEmployee {
+    string name, id;
+    short age;
+};
+
+void readInfo(stEmployee &employee) {
+    
+    cout << "employee name: ";
+    getline(cin, employee.name);
+    
+    cout << "employee id: ";
+    cin >> employee.id;
+    
+    cin.ignore(INT_MAX,'\n');
+    
+    cout << "employee age: ";
+    cin >> employee.age;
+    
+    cin.ignore(INT_MAX, '\n');
+}
+
+void printInfo(stEmployee employee) {
+    cout << "name : " << employee.name << '\n'; 
+    cout << "age : " << employee.age << '\n';
+    cout << "id : " << employee.id << '\n';
+}
+
+int main() {
+    stEmployee employee1;
+    readInfo(employee1);
+    printInfo(employee1);
+
+    stEmployee employee2;
+    readInfo(employee2);
+    printInfo(employee2);
+    
+    return 0;
+}
