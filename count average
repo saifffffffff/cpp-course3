@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+void ReadGradesData(float grades[]) {
+    cout << "enter grade 1 : ";
+    cin >> grades[0];
+
+    cin.ignore(INT_MAX, '\n');
+
+    cout << "enter grade 2 : ";
+    cin >> grades[1];
+
+    cin.ignore(INT_MAX, '\n');
+
+    cout << "enter grade 3 : ";
+    cin >> grades[2];
+}
+
+float CountAverage(float grades[]) {
+    
+    return (grades[0] + grades[1] + grades[2]) / 3;
+}
+
+int main() {
+    
+    float grades[3];
+
+    ReadGradesData(grades);
+     
+    cout << "***************************\nAvg: " << CountAverage(grades);
+
+    return 0;
+}
