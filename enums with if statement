@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string>
+
+
+using namespace std;
+
+
+enum enColors {yellow=1, green=2, red=3, blue=4};
+
+void SwitchConsoleColor() {
+    cout << "(1) for yellow\n(2) for green\n(3) for red\n(4) blue\n";
+
+    enColors Color;
+
+    int c;
+    cin >> c;
+
+    Color = (enColors)c;
+
+    if (Color == red) {
+        system("color 4F");
+    }
+    else if (Color == blue) {
+        system("color 3F");
+    }
+    else if (Color == green) {
+        system("color 2F");
+    }
+    else if (Color == yellow) {
+        system("color 6F");
+    }
+}
+
+enum enCountry {jordan =1 , syria= 2, egypt = 3, iraq= 4};
+
+void chooseCountry() {
+    cout << "(1) jordan\n(2) syria\n(3) egypt\n(4) iraq\n";
+
+    short c;
+    cin >> c;
+    enCountry country = (enCountry)c;
+
+    if (country == jordan) {
+        cout << "mansaf";
+    }
+    else if (country == iraq) {
+        cout << "zalabia";
+    }
+    else if (country == egypt) {
+        cout << "koshri";
+    }
+    else if (country == syria) {
+        cout << "taboli";
+    }
+}
+int main() {
+    
+    SwitchConsoleColor();
+    chooseCountry();
+    return 0;
+}
+
+
+
