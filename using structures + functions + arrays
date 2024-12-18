@@ -1,0 +1,74 @@
+#include <iostream>
+#include <string>
+
+
+using namespace std;
+
+
+
+struct stPerson {
+
+    string FirstName;
+    string LastName;
+    string PhoneNumber;
+    short Age;
+
+};
+
+void ReadInfo(stPerson &person) {
+    cout << "First name: ";
+    getline(cin, person.FirstName);
+    
+    cout << "Last name: ";
+    getline(cin, person.LastName);
+
+    cout << "Phone number: ";
+    cin >> person.PhoneNumber;
+
+    cin.ignore(INT_MAX, '\n');
+
+    cout << "Age: ";
+    cin >> person.Age;
+
+    cin.ignore(INT_MAX, '\n');
+    
+    cout << "*******************\n";
+}
+
+void PrintInfo(stPerson person) {
+
+    cout << "name: " << person.FirstName << " "<< person.LastName << '\n';
+    cout << "age: " << person.Age << '\n';
+    cout << "phone number: " << person.PhoneNumber<<'\n';
+    
+    cout<<"******************\n";
+}
+
+void ReadPeopleInfo(stPerson people[]) {
+    ReadInfo(people[0]);
+    ReadInfo(people[1]);
+
+}
+
+void PrintPeopleInfo(stPerson people[]) {
+    PrintInfo(people[0]);
+    PrintInfo(people[1]);
+}
+
+
+int main() {
+    
+    stPerson people[2];
+    
+    ReadPeopleInfo(people);
+
+    
+    PrintPeopleInfo(people);
+
+
+
+    return 0;
+}
+
+
+
